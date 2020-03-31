@@ -38,10 +38,16 @@ public class LeggiBabs {
 		// Tutte le volte che scriviamo codici che implicano l'accesso a risorse esterne, 
 		// dobbiamo aspettarci delle eccezioni
 		try {
+		
+			// Pattern di programmazione di tipo FACTORY
+			// FACTORY: creazione dell'oggetto di una classe senza sapere il tipo della classe ( NON posso usaren NEW)
+			// Uso un metodo fornito da un'altra classe (il DriverManager), che, internamente, fara' new e riconoscera'
+			// il tipo di classe effettivo
+		
 			Connection conn = DriverManager.getConnection(jdbcURL); // Immaginimao la connection, 
 			// come un tubo che collega il mio programma al database
 			
-			// Metodo PERICOLOSO, e POCO EFFICIENTE (vedere lezione 11 primi 10 minuti
+			// Metodo PERICOLOSO, e POCO EFFICIENTE (vedere lezione 11 primi 10 minuti)
 			
 			Statement st = conn.createStatement(); // Immaginiamo lo statement come una navetta, 
 			// che contine le mie istruzioni, che viaggia all'interno della connection, da un capo all'altro
@@ -74,12 +80,7 @@ public class LeggiBabs {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
-		// Pattern di programmazione di tipo FACTORY
-		// FACTORY: creazione dell'oggetto di una classe senza sapere il tipo della classe ( NON posso usaren NEW)
-		// Uso un metodo fornito da un'altra classe (il DriverManager), che internamente fara' new e riconoscera'
-		// il tipo di classe effettivo
-		
+		} 		
 		*/
 	}
 	
